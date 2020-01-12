@@ -1,4 +1,4 @@
-相关的素材
+相关的素材 安装在/usr/local/nginx    mkdir -p /usr/local/nginx 
 zlib * gcc-c++  pcre*  openssl*
 yum -y install gcc zlib-devel pcre-devel openssl openssl-devel
 官网下载nginx包
@@ -13,4 +13,6 @@ yum -y install gcc zlib-devel pcre-devel openssl openssl-devel
  
  
  
+ 启动  nginx#./sbin/nginx
  
+ conf  sbin  logs   html   配置文件  二进制文件    日志  网页文件
