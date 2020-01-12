@@ -1,0 +1,16 @@
+相关的素材
+zlib * gcc-c++  pcre*  openssl*
+yum -y install gcc zlib-devel pcre-devel openssl openssl-devel
+官网下载nginx包
+ wgent  http://nginx.org/download/nginx-1.16.1.tar.gz
+ 
+ tar -zxvf nginx-1.16.1.tar.gz
+ 
+ cd  nginx-1.16.1.tar.gz
+ 
+ ./configure
+ make && make install
+ 
+ 
+ 
+ 
