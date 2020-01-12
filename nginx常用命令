@@ -1,0 +1,15 @@
+使用nginx操作命令前提前条件  进入安装nginx目录下 或者sbin
+
+查看nginx的版本号
+/sbin#./nginx -v
+
+启动nginx
+
+ps -ef |grep nginx 查看nginx进程
+
+关闭nginx
+./nginx -s stop 
+
+
+重启加载nginx 配置文件
+./nginx -s reload 
