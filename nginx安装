@@ -1,3 +1,5 @@
+
+
 相关的素材 安装在/usr/local/nginx    mkdir -p /usr/local/nginx 
 zlib * gcc-c++  pcre*  openssl*
 yum -y install gcc zlib-devel pcre-devel openssl openssl-devel
@@ -16,3 +18,17 @@ yum -y install gcc zlib-devel pcre-devel openssl openssl-devel
  启动  nginx#./sbin/nginx
  
  conf  sbin  logs   html   配置文件  二进制文件    日志  网页文件
+ 
+ 默认80端口关闭   需要开启端口
+ 查看开发端口
+ firewall-cmd --list-all
+ 
+ 设置开发的端口号
+ firewall-cmd --add-service=http -permanent
+ firewall-cmd --add-port=80/tcp --permanent
+ 
+ 重启防火墙
+ firewall-cmd -reload
+ 
+ 
+ 在主机上 http://localhost:80
