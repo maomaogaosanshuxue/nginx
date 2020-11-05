@@ -1,0 +1,48 @@
+反向代理，其实客户端对代理是无感知的，因为客户端不需要任何配置就可以访问，我们只
+需要将请求发送到反向代理服务器，由反向代理服务器去选择目标服务器获取数据后,在返
+回给客户端，此时反向代理服务器和目标服务器对外就是一个服务器，暴露的是代理服务器
+地址，隐藏了真实服务器IP地址
+nginx ip: 47.113.122.218   
+tomcat:  47.75.174.233:8080  
+tomcat   47.107.105.174:8080
+#proxy_pass http:ip:port
+#反向代理一
+server {
+        listen       80;
+        server_name  47.113.122.218;
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+        location / {
+            root   html;
+            proxy_pass http://47.75.174.233:8080; #转发
+            index  index.html index.htm;
+        }
+
+
+
+#反响代理二   tomcat 目录下webapps 创建  seh aa目录
+#路径
+  server {
+        listen       9001;
+       # listen       somename:8080;
+        server_name  47.113.122.218
+
+        location ~ /seh/ {
+            proxy_pass http://47.75.174.233:8080;
+        }
+        location ~ /aa/ {
+
+            proxy_pass http://47.107.105.174:8080;
+        }
+
+
+   }
+
+测试  http://47.113.122.218/seh/
+
+
+
+
