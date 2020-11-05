@@ -1,0 +1,29 @@
+1.准备工作
+在liunx系统中准备静态资源，用于进行访问
+
+/data/image 图片文件夹
+
+/data/www html文件夹
+2.具体配置
+
+在nginx配置文件中进行配置
+
+server {
+        listen       80;
+        server_name  47.113.122.218;
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+        location /www/ {
+            root   /data/;
+            index  index.html index.htm;
+        }
+
+        location /image/ {
+            root /data/;
+            autoindex on; #列出选择
+3.实际测试
+http://47.113.122.218/www/index.html
+http://47.113.122.218/image/1.jpg
